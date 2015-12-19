@@ -1,10 +1,10 @@
 /*
-    MySQL Adapter
+    Juttle MySQL Adapter
 */
 
 var _ = require('underscore');
 var util = require("util");
-var SqlAdapter = require('juttle-sql-adapter-common');
+var SqlAdapterCommon = require('juttle-sql-adapter-common');
 
 function MysqlAdapter(config, Juttle) {
     var clientSpecficConfig = {};
@@ -16,7 +16,7 @@ function MysqlAdapter(config, Juttle) {
         });
     }
 
-    var baseSql = SqlAdapter.call(this, clientSpecficConfig, Juttle);
+    var baseSql = SqlAdapterCommon.call(this, clientSpecficConfig, Juttle);
 
     baseSql.name = 'mysql';
 
@@ -50,5 +50,5 @@ function MysqlAdapter(config, Juttle) {
     return baseSql;
 }
 
-util.inherits(MysqlAdapter, SqlAdapter);
+util.inherits(MysqlAdapter, SqlAdapterCommon);
 module.exports = MysqlAdapter;

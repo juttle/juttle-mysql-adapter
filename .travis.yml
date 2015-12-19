@@ -25,6 +25,7 @@ before_script:
     - npm install juttle
     - npm install -g jshint
     - npm install -g jscs
+    - mysql -e "create database IF NOT EXISTS test;" -uroot
 
 script:
     - npm run -s lint
