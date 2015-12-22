@@ -22,7 +22,7 @@ services:
   - mysql
 
 before_script:
-    - npm install juttle
+    - npm install juttle@^0.1.0
     - npm install -g jshint
     - npm install -g jscs
     - mysql -e "create database IF NOT EXISTS test;" -uroot
