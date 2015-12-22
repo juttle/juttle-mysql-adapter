@@ -1,6 +1,6 @@
 # Juttle MySQL Adapter
 
-[![Build Status](https://magnum.travis-ci.com/juttle/juttle-mysql-adapter.svg?token=y7186y8XHjB7CcxwUcoX)](https://magnum.travis-ci.com/juttle/juttle-mysql-adapter)
+[![Build Status](https://travis-ci.org/juttle/juttle-mysql-adapter.svg)](https://travis-ci.org/juttle/juttle-mysql-adapter)
 
 MySQL adapter for the [Juttle data flow
 language](https://github.com/juttle/juttle), with read & write support.
