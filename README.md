@@ -1,6 +1,6 @@
 # Juttle MySQL Adapter
 
-[![Build Status](https://travis-ci.org/juttle/juttle-mysql-adapter.svg)](https://travis-ci.org/juttle/juttle-mysql-adapter)
+[![Build Status](https://travis-ci.org/juttle/juttle-mysql-adapter.svg?branch=master)](https://travis-ci.org/juttle/juttle-mysql-adapter)
 
 MySQL adapter for the [Juttle data flow
 language](https://github.com/juttle/juttle), with read & write support.
@@ -57,7 +57,7 @@ within Juttle. To do so, add the following to your `~/.juttle/config.json` file:
 ```json
 {
     "adapters": {
-        "juttle-mysql-adapter": {
+        "mysql": {
             "connection": {
                 "user": "root",
                 "password": "password",
