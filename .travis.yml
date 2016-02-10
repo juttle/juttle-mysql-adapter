@@ -23,10 +23,9 @@ services:
   - mysql
 
 before_script:
-    - npm install -g jshint
-    - npm install -g jscs
     - mysql -e "create database IF NOT EXISTS test;" -uroot
 
 script:
-    - npm run -s lint
     - npm test
+    - npm run test-coverage
+    - npm run check-coverage
