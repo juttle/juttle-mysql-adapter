@@ -44,8 +44,8 @@ function MysqlAdapter(config, Juttle) {
     });
 
     _.extend(baseSql.write.prototype, {
-         procName: 'write-mysql'
-     });
+        procName: 'write-mysql'
+    });
 
     return baseSql;
 }
