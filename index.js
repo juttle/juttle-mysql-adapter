@@ -5,18 +5,48 @@
 var _ = require('underscore');
 var util = require("util");
 var SqlAdapterCommon = require('juttle-sql-adapter-common');
+var Knex = require('knex');
 
-function MysqlAdapter(config, Juttle) {
-    var clientSpecficConfig = {};
+var REQUIRED_CONFIG_PROPERTIES = ['user', 'db'];
 
-    if (config.connection) {
-        clientSpecficConfig.knex = require('knex')({
-            "client": "mysql2",
-            "connection": config.connection
+function _assign_knex_getter() {
+    var db = require('juttle-sql-adapter-common/lib/db');
+    db.getKnex = function(singleDBConfig, options) {
+        options = options || {};
+
+        var conf = _.clone(singleDBConfig);
+        if (options.db) {
+            conf.db = options.db;
+        }
+
+        var conn = getConnectionProperty(conf);
+
+        return Knex({
+            "client": "mysql",
+            "connection": conn
         });
-    }
+    };
+}
 
-    var baseSql = SqlAdapterCommon.call(this, clientSpecficConfig, Juttle);
+function getConnectionProperty(singleDBConfig) {
+    _.each(REQUIRED_CONFIG_PROPERTIES, function(prop) {
+        if (!singleDBConfig.hasOwnProperty(prop)) {
+            throw new Error('Each configuration must contain a field: ' + prop);
+        }
+    });
+
+    return {
+        user: singleDBConfig.user,
+        password: singleDBConfig.password,
+        host: singleDBConfig.host,
+        port: singleDBConfig.port,
+        database: singleDBConfig.db
+    };
+}
+
+function MysqlAdapter(config) {
+    var baseSql = SqlAdapterCommon.call(this, config);
+    _assign_knex_getter();
 
     baseSql.name = 'mysql';
 
