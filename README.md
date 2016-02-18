@@ -52,24 +52,20 @@ $ npm install juttle-mysql-adapter
 ## Configuration
 
 The adapter needs to be registered and configured so that it can be used from
-within Juttle. To do so, add the following to your `~/.juttle/config.json` file:
+within Juttle. To do so, add credentials like the following to your `~/.juttle/config.json` file:
 
 ```json
 {
     "adapters": {
         "mysql": {
-            "connection": {
-                "user": "root",
-                "password": "password",
-                "host": "localhost",
-                "database": "test"
-            }
+            "user": "root",
+            "password": "password",
+            "host": "localhost",
+            "db": "test"
         }
     }
 }
 ```
-
-The `connection` key should point to your MySQL instance.
 
 More documentation on the connection object can be found in the [knex.js documentation](http://knexjs.org/#Installation-client)
 

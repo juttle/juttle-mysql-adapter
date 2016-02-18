@@ -20,9 +20,9 @@
     "check-coverage": "istanbul check-coverage"
   },
   "dependencies": {
-    "juttle-sql-adapter-common": "^0.3.3",
+    "juttle-sql-adapter-common": "^0.4.0",
     "knex": "^0.9.0",
-    "mysql2": "^0.15.8",
+    "mysql": "^2.10.2",
     "underscore": "^1.8.3"
   },
   "devDependencies": {
