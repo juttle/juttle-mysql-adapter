@@ -1,10 +1,13 @@
 var TestUtils = require('juttle-sql-adapter-common/test/utils');
 
-TestUtils.getAdapterClass = function () {
-    return require('../');
+TestUtils.getDBClass = function () {
+    return require('../lib/db');
+};
+TestUtils.getAdapterName = function () {
+    return 'mysql';
 };
 TestUtils.getAdapterConfig = function () {
-    return [
+    var conf = [
         {
             id: 'default',
             user : 'root',
@@ -18,5 +21,9 @@ TestUtils.getAdapterConfig = function () {
             db : 'should_not_work'
         }
     ];
+
+    conf.path = './';
+    return conf;
 };
+
 module.exports = TestUtils;
