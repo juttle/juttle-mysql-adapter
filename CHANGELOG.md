@@ -1,6 +1,12 @@
 # Change Log
 This file documents all notable changes to the juttle-mysql-adapter. The release numbering uses [semantic versioning](http://semver.org).
 
+## 0.6.1
+Released 2016-03-24
+
+### Bug Fixes
+- Correctly handle response from 'CREATE TABLE' [[#12](https://github.com/juttle/juttle-mysql-adapter/pull/12)]
+
 ## 0.6.0
 Released 2016-03-23
 
